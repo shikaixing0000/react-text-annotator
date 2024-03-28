@@ -297,7 +297,7 @@ export const getTokenEventListenersFactory = ({
             selectionStore.select(tokenStore.index);
         } else {
             // selectionStore.hover(tokenStore.index);
-            selectionStore.unHover(tokenStore.index);
+            // selectionStore.unHover(tokenStore.index);
         }
     },
     onMouseDown: e => {
