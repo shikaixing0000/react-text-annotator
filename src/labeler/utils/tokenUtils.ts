@@ -296,19 +296,27 @@ export const getTokenEventListenersFactory = ({
         if (selectionStore.isDragging) {
             selectionStore.select(tokenStore.index);
         } else {
-            selectionStore.hover(tokenStore.index);
+            // selectionStore.hover(tokenStore.index);
+            selectionStore.unHover(tokenStore.index);
         }
     },
     onMouseDown: e => {
+        // 阻止事件冒泡
         e.stopPropagation();
+        // 设置拖拽状态
         selectionStore.setIsDragging(true);
-        selectionStore.select(tokenStore.index);
+        // 选择当前token
+        // selectionStore.select(tokenStore.index);
     },
     onMouseUp: e => {
         e.stopPropagation();
+        // 设置拖拽状态
         selectionStore.setIsDragging(false);
+        selectionStore.unHover();
+
     },
     onMouseLeave: () => {
+        // unhover鼠标离开  执行unHover
         selectionStore.unHover();
     },
     onKeyDown: e => {
