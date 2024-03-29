@@ -47,7 +47,7 @@ const toSvgRenderProps = (
     startToken: data.startToken,
     namePosition: isRtl ? 'end' : 'start',
     isResizingEnabled: data.isResizingEnabled,
-    startLine: data.lineSegments[0].lineIndex,
+    startLine: data?.lineSegments?.[0]?.lineIndex,
     color: data.color ?? labelerTheme.annotation.defaultColor,
     endLine: data.lineSegments[data.lineSegments.length - 1].lineIndex
 });

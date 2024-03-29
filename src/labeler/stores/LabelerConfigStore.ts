@@ -24,26 +24,27 @@ export type LabelerConfigStoreParameters = Partial<
  * Controls view configurations for the labeler.
  */
 export class LabelerConfigStore {
+    //标志，指示标签器是否处于RTL模式。
     @observable public isRtl: boolean;
-
+    // 标志，指示标签器是否被禁用。
     @observable public isDisabled: boolean;
-
+    // 标志，指示标签是否有效。
     @observable public areAnnotationsValid: boolean;
-
+    // 标志，指示是否禁用选择。
     @observable public isSelectionDisabled: boolean;
-
+    // 标志，指示是否启用虚拟化。
     @observable public enableVirtualization: boolean;
-
+    // 标志，指示工具提示是否处于深色模式。
     @observable public areTooltipsInDarkMode: boolean;
-
+    // 标志，指示注释是否可单击。
     @observable public areAnnotationsClickable: boolean;
-
+    // 标志，指示是否隐藏注释名称。
     @observable public areAnnotationNamesHidden: boolean;
-
+    // 标志，指示是否启用注释调整大小。
     @observable public isAnnotationResizingEnabled: boolean;
-
+    // 标志，指示标记类型。
     @observable public tokenizationType: 'word' | 'character';
-
+    // 标志，指示是否启用换行。
     @observable public wordBreak: 'normal' | 'breakAll' | 'keepAll';
 
     constructor(initialParams?: LabelerConfigStoreParameters) {
